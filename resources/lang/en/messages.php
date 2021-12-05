@@ -3,6 +3,12 @@
 
 return [
     'welcome' => 'Welcome to our application!',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'delete_confirm' => 'Do you want to Delete',
+    'actions' => 'Actions',
+    'cancel' => 'Canel',
+    'confirm' => 'Confirm',
     'products' => 'Products',
     'add_product' => 'Add Product',
     'name' => 'Name',

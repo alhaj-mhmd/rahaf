@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::where();
+        $categories = Category::where('user_id', Auth::id())->get();
         return view('categories.categories', compact('categories'));
     }
 
@@ -39,7 +39,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('categories.create_category');
     }
 
     /**
@@ -50,7 +50,23 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|unique:categories|max:255',
+        ],[
+
+            'name.required' =>'يرجي ادخال اسم الصنف',
+            'name.unique' =>'اسم الصنف مسجل مسبقا',
+
+
+        ]);
+
+            Category::create([
+                'name' => $request->name,
+                'user_id' => (Auth::id()),
+
+            ]);
+            session()->flash('Add', 'تم اضافة الصنف بنجاح ');
+            return redirect('/categories');
     }
 
     /**
@@ -93,8 +109,13 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        
+        $id = $request->category_id;
+     
+        Category::find($id)->delete();
+        session()->flash('delete','تم حذف القسم بنجاح');
+        return redirect('/categories');
     }
 }

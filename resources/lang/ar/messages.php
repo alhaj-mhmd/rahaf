@@ -3,6 +3,12 @@
 
 return [
     'welcome' => 'أهلا بكم في موقعنا',
+    'edit' => 'تعديل',
+    'delete' => 'حذف',
+    'delete_confirm' => ' هل انت متاكد من عملية الحذف ؟ ',
+    'actions' => 'العمليات',
+    'cancel' => 'إلغاء',
+    'confirm' => 'تأكيد',
     'products' => 'المنتجات',
     'add_product' => 'إضافة منتج',
     'name' => 'الإسم',
