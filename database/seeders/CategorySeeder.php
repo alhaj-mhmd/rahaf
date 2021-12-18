@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Seeder;
-use App\Models\Referral;
 
-class ReferralSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class ReferralSeeder extends Seeder
      */
     public function run()
     {
-        Referral::factory()->count(500)->create();
+        Category::factory()->count(20)->create();
     }
 }

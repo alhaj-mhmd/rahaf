@@ -20,8 +20,8 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-      <!-- Custom styles for this page -->
-      <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -46,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{url('/home')}}">
+                <a class="nav-link" href="{{ url('/home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -61,56 +61,57 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#users"
-                    aria-expanded="true" aria-controls="users">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#users" aria-expanded="true"
+                    aria-controls="users">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Users</span>
                 </a>
                 <div id="users" class="collapse" aria-labelledby="users" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Users</h6>
-                        <a class="collapse-item" href="{{route('user.index')}}">All Users</a>
+                        <a class="collapse-item" href="{{ route('user.index') }}">All Users</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#purchases"
-                    aria-expanded="true" aria-controls="purchases">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#products"
+                    aria-expanded="true" aria-controls="products">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Purchases</span>
+                    <span>Products</span>
                 </a>
-                <div id="purchases" class="collapse" aria-labelledby="purchases" data-parent="#accordionSidebar">
+                <div id="products" class="collapse" aria-labelledby="products" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Purchases</h6>
-                        <a class="collapse-item" href="{{route('purchase.index')}}">All Purchases</a>
+                        <h6 class="collapse-header">Products</h6>
+                        <a class="collapse-item" href="{{ route('product.index') }}">All Products</a>
+                        <a class="collapse-item" href="{{ route('product.create') }}">Create Product</a>
                     </div>
                 </div>
             </li>
-          
-          
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#referrals"
-                    aria-expanded="true" aria-controls="referrals">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categories"
+                    aria-expanded="true" aria-controls="categories">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Referrals</span>
+                    <span>Categories</span>
                 </a>
-                <div id="referrals" class="collapse" aria-labelledby="referrals" data-parent="#accordionSidebar">
+                <div id="categories" class="collapse" aria-labelledby="categories"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Referrals</h6>
-                        <a class="collapse-item" href="{{route('referral.index')}}">All Referrals</a>
+                        <h6 class="collapse-header">Categories</h6>
+                        <a class="collapse-item" href="{{ route('category.index') }}">All Categories</a>
+                        <a class="collapse-item" href="{{ route('category.create') }}">Create Category</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tiers"
-                    aria-expanded="true" aria-controls="tiers">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tiers" aria-expanded="true"
+                    aria-controls="tiers">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Tiers</span>
                 </a>
                 <div id="tiers" class="collapse" aria-labelledby="tiers" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tiers</h6>
-                        <a class="collapse-item" href="{{route('tier.index')}}">All Tiers</a>
+                        <a class="collapse-item" href="">All Tiers</a>
                     </div>
                 </div>
             </li>
@@ -123,13 +124,13 @@
                 <div id="rewards" class="collapse" aria-labelledby="rewards" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Rewards</h6>
-                        <a class="collapse-item" href="{{route('reward.index')}}">All Rewards</a>
+                        <a class="collapse-item" href="">All Rewards</a>
                     </div>
                 </div>
             </li>
 
-          
-           
+
+
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -273,11 +274,11 @@
     {{-- <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script> --}}
     {{-- <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script> --}}
     <!-- Page level plugins -->
-    <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
+    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
 
 </body>
 

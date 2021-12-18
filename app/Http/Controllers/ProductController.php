@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -15,7 +17,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        echo 'product';
+      
+       
+  
+        $id = Auth::id(); 
+        $products = User::find($id)->products;
+        return view('product.index',compact('products'));
+      
+       
     }
 
     /**
@@ -25,7 +34,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -47,7 +56,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $product = Product::find($product->id);
+        return view('product.show',compact('product'));
     }
 
     /**
@@ -58,7 +68,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+         
+        $product = Product::find($product->id);
+        return view('product.edit',compact('product'));
     }
 
     /**
@@ -81,7 +93,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product = Product::find($product->id);
+        $product->delete();
+        session()->flash('delete');
+        return redirect()->route('product.index');
     }
 
     
