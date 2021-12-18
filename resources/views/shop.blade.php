@@ -48,7 +48,14 @@ use Carbon\Carbon; ?>
             </div>
         </div>
     </nav>
-
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Search</h1>
+                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+            </div>
+        </div>
+    </header>
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
@@ -64,6 +71,8 @@ use Carbon\Carbon; ?>
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">{{ $product->name }}</h5>
+                                    <h6>{{ $product->category->name }}</h6> 
+                                    <span class="text-danger">{{ Carbon::parse($product->expiry_date)->format('d M Y');}}</span><br>
                                     <!-- Product price-->
                                     <?php
                                     $date = Carbon::parse($product->expiry_date);
