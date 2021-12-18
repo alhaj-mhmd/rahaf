@@ -6,6 +6,10 @@ use App\Models\Shop;
 use App\Models\Product;
 use App\Http\Requests\StoreShopRequest;
 use App\Http\Requests\UpdateShopRequest;
+use App\Models\Like;
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
@@ -16,7 +20,9 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return view('shop');
+        $products = Product::all();
+
+        return view('shop', compact('products'));
     }
 
     /**
@@ -35,9 +41,13 @@ class ShopController extends Controller
      * @param  \App\Http\Requests\StoreShopRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreShopRequest $request)
+    public function store(Request $request)
     {
-        //
+        $like = Like::create([
+            'product_id' =>  $request->product_id
+        ]);
+        session()->flash('create');
+        return redirect()->route('shop.show', [$request->product_id]);
     }
 
     /**
@@ -46,9 +56,15 @@ class ShopController extends Controller
      * @param  \App\Models\Shop  $shop
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($product_id)
     {
-        return view('shop-item');
+
+        $product = Product::find($product_id);
+
+        DB::table('products')->where('id', '=', $product_id)->increment('views');
+        session()->flash('create');
+
+        return view('shop-item', compact('product'));
     }
 
     /**
@@ -69,9 +85,8 @@ class ShopController extends Controller
      * @param  \App\Models\Shop  $shop
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateShopRequest $request, Shop $shop)
+    public function update(Request $request)
     {
-        //
     }
 
     /**

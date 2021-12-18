@@ -15,7 +15,8 @@ class LikeController extends Controller
      */
     public function index()
     {
-        //
+        $likes = Like::all();
+        return view('like.index',compact('likes'));
     }
 
     /**

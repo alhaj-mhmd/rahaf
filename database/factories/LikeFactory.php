@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LikeFactory extends Factory
@@ -13,8 +15,9 @@ class LikeFactory extends Factory
      */
     public function definition()
     {
+        $products = Product::pluck('id')->toArray();
         return [
-            //
+            'product_id' => $this->faker->randomElement($products),
         ];
     }
 }

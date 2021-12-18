@@ -26,13 +26,14 @@ class ProductFactory extends Factory
 
             'name' => $this->faker->name(),
             'expiry_date' => $this->faker->dateTime(),
-            //'phone' => $this->faker->phoneNumber(),
+            'description' => $this->faker->text(),
+            'views' => $this->faker->randomDigit(),
             'quantity' => $this->faker->randomDigit(),
-            'price' => $this->faker->randomDigit(),
+            'views' => $this->faker->randomDigit(),
             'price1' => $this->faker->randomDigit(),
             'price2' => $this->faker->randomDigit(),
             'price3' => $this->faker->randomDigit(),
-            'user_id' =>501 ,// $this->faker->randomElement($users),
+            'user_id' => $this->faker->randomElement($users),
             'category_id' => $this->faker->randomElement($categories),
         ];
    

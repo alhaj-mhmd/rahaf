@@ -20,7 +20,7 @@ class CategoryFactory extends Factory
             return [
  
                 'name' => $this->faker->name(),
-                'user_id' =>501 // $this->faker->randomElement($users),
+                'user_id' => $this->faker->randomElement($users),
             ];
        
     }

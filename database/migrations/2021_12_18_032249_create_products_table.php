@@ -16,11 +16,12 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('picture')->nullable();;
+            $table->string('picture')->nullable();
             $table->dateTime('expiry_date');
-            $table->integer('phone')->nullable();;
+            $table->integer('phone')->nullable();
             $table->integer('quantity');
-            $table->integer('price');
+            $table->integer('views')->nullable();
+            $table->text('description')->nullable();
             $table->integer('price1'); // valid more than 30 days
             $table->integer('price2'); //valid more than 15 days and less than 30 days
             $table->integer('price3'); // valid less than 15 days
