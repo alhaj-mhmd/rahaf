@@ -1,6 +1,6 @@
 <?php
 use Carbon\Carbon; ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +52,27 @@ use Carbon\Carbon; ?>
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Search</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                <form class="forms-sample">
+                    <div class="row">
+
+                        <div class="col-4">
+                            <label>category</label>
+                            <input type="date" class="form-control" id="name">
+                        </div>
+                        <div class="col-4">
+                            <label>category</label>
+                            <select class="form-control">
+                                <option value="AL" >Alabama</option>
+                              </select>
+                        </div>
+                        <div class="col-4">
+                            <label>category</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="col-12 mt-3"><button type="submit" class="btn btn-primary me-2">Search</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </header>
@@ -71,8 +91,9 @@ use Carbon\Carbon; ?>
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">{{ $product->name }}</h5>
-                                    <h6>{{ $product->category->name }}</h6> 
-                                    <span class="text-danger">{{ Carbon::parse($product->expiry_date)->format('d M Y');}}</span><br>
+                                    <h6>{{ $product->category->name }}</h6>
+                                    <span
+                                        class="text-danger">{{ Carbon::parse($product->expiry_date)->format('d M Y') }}</span><br>
                                     <!-- Product price-->
                                     <?php
                                     $date = Carbon::parse($product->expiry_date);
@@ -87,15 +108,15 @@ use Carbon\Carbon; ?>
                                     }
                                     ?>
                                     SP {{ $price }}
-                                     
+
 
                                 </div>
                                 <div class="text-center">
                                     <i class="bi bi-eye"></i> {{ $product->views }}
                                 </div>
                                 <div class="text-center">
-                                    <span><i class="bi bi-star"></i> {{$product->likes->count()}}
-                                        
+                                    <span><i class="bi bi-star"></i> {{ $product->likes->count() }}
+
                                 </div>
                             </div>
                             <!-- Product actions-->
