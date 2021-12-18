@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1250840d8a85678df334ca67bbfea2cd
+class ComposerStaticInit899391f953d2cf15a9dc1d6348ff6f93
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -539,23 +539,50 @@ class ComposerStaticInit1250840d8a85678df334ca67bbfea2cd
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\LanguageController' => __DIR__ . '/../..' . '/app/Http/Controllers/LanguageController.php',
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
+        'App\\Http\\Controllers\\PurchaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/PurchaseController.php',
+        'App\\Http\\Controllers\\ReferralController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReferralController.php',
+        'App\\Http\\Controllers\\RewardController' => __DIR__ . '/../..' . '/app/Http/Controllers/RewardController.php',
+        'App\\Http\\Controllers\\TierController' => __DIR__ . '/../..' . '/app/Http/Controllers/TierController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
-        'App\\Http\\Middleware\\Language' => __DIR__ . '/../..' . '/app/Http/Middleware/Language.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+        'App\\Http\\Requests\\StoreCommentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreCommentRequest.php',
+        'App\\Http\\Requests\\StoreProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreProductRequest.php',
+        'App\\Http\\Requests\\StorePurchaseRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StorePurchaseRequest.php',
+        'App\\Http\\Requests\\StoreReferralRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreReferralRequest.php',
+        'App\\Http\\Requests\\StoreRewardRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreRewardRequest.php',
+        'App\\Http\\Requests\\StoreTierRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreTierRequest.php',
+        'App\\Http\\Requests\\UpdateCommentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateCommentRequest.php',
+        'App\\Http\\Requests\\UpdateProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateProductRequest.php',
+        'App\\Http\\Requests\\UpdatePurchaseRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdatePurchaseRequest.php',
+        'App\\Http\\Requests\\UpdateReferralRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateReferralRequest.php',
+        'App\\Http\\Requests\\UpdateRewardRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateRewardRequest.php',
+        'App\\Http\\Requests\\UpdateTierRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTierRequest.php',
+        'App\\Models\\Comment' => __DIR__ . '/../..' . '/app/Models/Comment.php',
+        'App\\Models\\Like' => __DIR__ . '/../..' . '/app/Models/Like.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
+        'App\\Models\\Purchase' => __DIR__ . '/../..' . '/app/Models/Purchase.php',
+        'App\\Models\\Referral' => __DIR__ . '/../..' . '/app/Models/Referral.php',
+        'App\\Models\\Reward' => __DIR__ . '/../..' . '/app/Models/Reward.php',
+        'App\\Models\\Tier' => __DIR__ . '/../..' . '/app/Models/Tier.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Policies\\CommentPolicy' => __DIR__ . '/../..' . '/app/Policies/CommentPolicy.php',
+        'App\\Policies\\ProductPolicy' => __DIR__ . '/../..' . '/app/Policies/ProductPolicy.php',
+        'App\\Policies\\PurchasePolicy' => __DIR__ . '/../..' . '/app/Policies/PurchasePolicy.php',
+        'App\\Policies\\ReferralPolicy' => __DIR__ . '/../..' . '/app/Policies/ReferralPolicy.php',
+        'App\\Policies\\RewardPolicy' => __DIR__ . '/../..' . '/app/Policies/RewardPolicy.php',
+        'App\\Policies\\TierPolicy' => __DIR__ . '/../..' . '/app/Policies/TierPolicy.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -663,8 +690,22 @@ class ComposerStaticInit1250840d8a85678df334ca67bbfea2cd
         'Cron\\HoursField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+        'Database\\Factories\\CommentFactory' => __DIR__ . '/../..' . '/database/factories/CommentFactory.php',
+        'Database\\Factories\\LikeFactory' => __DIR__ . '/../..' . '/database/factories/LikeFactory.php',
+        'Database\\Factories\\ProductFactory' => __DIR__ . '/../..' . '/database/factories/ProductFactory.php',
+        'Database\\Factories\\PurchaseFactory' => __DIR__ . '/../..' . '/database/factories/PurchaseFactory.php',
+        'Database\\Factories\\ReferralFactory' => __DIR__ . '/../..' . '/database/factories/ReferralFactory.php',
+        'Database\\Factories\\RewardFactory' => __DIR__ . '/../..' . '/database/factories/RewardFactory.php',
+        'Database\\Factories\\TierFactory' => __DIR__ . '/../..' . '/database/factories/TierFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
+        'Database\\Seeders\\CommentSeeder' => __DIR__ . '/../..' . '/database/seeders/CommentSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\ProductSeeder' => __DIR__ . '/../..' . '/database/seeders/ProductSeeder.php',
+        'Database\\Seeders\\PurchaseSeeder' => __DIR__ . '/../..' . '/database/seeders/PurchaseSeeder.php',
+        'Database\\Seeders\\ReferralSeeder' => __DIR__ . '/../..' . '/database/seeders/ReferralSeeder.php',
+        'Database\\Seeders\\RewardSeeder' => __DIR__ . '/../..' . '/database/seeders/RewardSeeder.php',
+        'Database\\Seeders\\TierSeeder' => __DIR__ . '/../..' . '/database/seeders/TierSeeder.php',
+        'Database\\Seeders\\UserSeeder' => __DIR__ . '/../..' . '/database/seeders/UserSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -5555,10 +5596,10 @@ class ComposerStaticInit1250840d8a85678df334ca67bbfea2cd
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1250840d8a85678df334ca67bbfea2cd::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1250840d8a85678df334ca67bbfea2cd::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1250840d8a85678df334ca67bbfea2cd::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1250840d8a85678df334ca67bbfea2cd::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit899391f953d2cf15a9dc1d6348ff6f93::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit899391f953d2cf15a9dc1d6348ff6f93::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit899391f953d2cf15a9dc1d6348ff6f93::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit899391f953d2cf15a9dc1d6348ff6f93::$classMap;
 
         }, null, ClassLoader::class);
     }
