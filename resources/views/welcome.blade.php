@@ -26,7 +26,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('shop') }}">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('shop.index')}}">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
                     @if (Route::has('login'))
 
@@ -53,8 +53,8 @@
             <div class="row gx-4 gx-lg-5">
                 <div class="col-lg-6 text-light">
 
-                    <p class="mt-5">Enhancing your online presence with
-                    <h1 class=""> Digitalised data-centric solutions</h1>
+                    <p class="mt-5">Rahaf
+                    <h1 class="">Project</h1>
                     </p>
 
                 </div>
