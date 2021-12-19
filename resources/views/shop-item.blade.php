@@ -46,7 +46,6 @@ use Carbon\Carbon; ?>
                 <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0"
                         src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
                 <div class="col-md-6">
-
                     <h1 class="display-5 fw-bolder">{{ $product->name }}</h1>
                     <div class="fs-5 mb-5">
                         <?php
@@ -61,23 +60,70 @@ use Carbon\Carbon; ?>
                             $price = $product->price3;
                         }
                         ?>
-
                         <span> SP {{ $price }}</span><br>
                         <span><i class="bi bi-eye"></i> {{ $product->views }}</span><br>
                         <span><i class="bi bi-star"></i> {{ $product->likes->count() }}</span>
                     </div>
-
                     <p class="lead">{{ $product->description }}</p>
-
-
                     <form action="{{ route('shop.store') }}" method="post">
                         {{ csrf_field() }}
-                        <input type="hidden" value="{{$product->id}}" name="product_id">
+                        <input type="hidden" value="{{ $product->id }}" name="product_id">
                         <button type="submit" class="btn btn-danger"><i class="bi bi-suit-heart"></i></button>
                     </form>
-
                 </div>
             </div>
+        </div>
+        </div>
+    </section>
+    <section class="py-5 bg-light">
+        <div class="container px-4 px-lg-5 mt-5">
+            <h2 class="fw-bolder mb-4">Comments ({{ $product->comments->count() }})</h2>
+            <div class="row">
+                @foreach ($product->comments as $comment)
+                    <div class="col-12 mb-3">
+                        <div class="card h-100">
+
+
+                            <div class="card-body p-4">
+                                <div>
+
+                                    <h5 class="fw-bolder">{{ $comment->name }}</h5>
+                                    {{ $comment->email }}
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="alert alert-primary">{{ $comment->comment }}</div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                <form action="{{ route('comment.store') }}" method="post">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                    <div class="col-12 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body p-4">
+                                <div class="form-group">
+                                    <label for="name">name</label>
+                                    <input type="text" class="form-control" name="name" id="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">email</label>
+                                <input type="email" class="form-control" name="email" id="">
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="form-group">
+                                <label for="comment">Comment</label>
+                                <textarea class="form-control" name="comment" id="" cols="30" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    </div>
+            </div>
+            </form>
         </div>
         </div>
     </section>

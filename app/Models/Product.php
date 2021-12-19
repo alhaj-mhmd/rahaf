@@ -16,13 +16,12 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
-    // public function comments()
-    // {
-    //     return $this->hasMany(Comment::class);
-    // }
-
-    public function likes()
+      public function likes()
     {
         return $this->hasMany(Like::class);
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

@@ -25,7 +25,7 @@ class ProductFactory extends Factory
         return [
 
             'name' => $this->faker->name(),
-            'expiry_date' => $this->faker->dateTime(),
+            'expiry_date' => $this->faker->dateTimeBetween('+0 days', '+2 years'),
             'description' => $this->faker->text(),
             'views' => $this->faker->randomDigit(),
             'quantity' => $this->faker->randomDigit(),

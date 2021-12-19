@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
+use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
@@ -34,9 +35,18 @@ class CommentController extends Controller
      * @param  \App\Http\Requests\StoreCommentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCommentRequest $request)
+    public function store(Request $request)
     {
-        //
+       
+        $Comment = Comment::create([
+
+            'product_id' =>  $request->product_id,
+            'name' =>  $request->name,
+            'email' =>  $request->email,
+            'comment' =>  $request->comment,
+        ]);
+        session()->flash('create');
+        return redirect()->route('shop.show', [$request->product_id]);
     }
 
     /**

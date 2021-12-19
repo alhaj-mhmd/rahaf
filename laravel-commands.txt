@@ -64,3 +64,19 @@ php artisan db:seed --class=UserSeeder
 php artisan db:seed --class=PurchaseSeeder
 php artisan db:seed --class=ReferralSeeder
 
+==================================================Rahaf
+
+php artisan make:model Product -a
+php artisan make:model Category -a
+php artisan make:model Comment -a
+php artisan make:model Like -a
+php artisan make:model Shop -a 
+
+<a class="nav-link" href=" {{ route('profiles.show',$logged_user) }}">
+
+php artisan db:seed --class=UserSeeder
+php artisan db:seed --class=CategorySeeder
+php artisan db:seed --class=ProductSeeder
+php artisan db:seed --class=CommentSeeder
+php artisan db:seed --class=LikeSeeder
+

@@ -15,14 +15,14 @@ class CommentFactory extends Factory
      */
     public function definition()
     {
-       
+
         $users = User::pluck('id')->toArray();
         $products = Product::pluck('id')->toArray();
-            
-        return [
 
+        return [
             'comment' => $this->faker->text(),
-            'user_id' => $this->faker->randomElement($users),
+            'name' => $this->faker->name(),
+            'email' => $this->faker->email(),
             'product_id' => $this->faker->randomElement($products),
         ];
     }

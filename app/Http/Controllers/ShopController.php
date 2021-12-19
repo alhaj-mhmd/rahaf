@@ -6,6 +6,7 @@ use App\Models\Shop;
 use App\Models\Product;
 use App\Http\Requests\StoreShopRequest;
 use App\Http\Requests\UpdateShopRequest;
+use App\Models\Category;
 use App\Models\Like;
 use Illuminate\Http\Request;
 
@@ -21,10 +22,48 @@ class ShopController extends Controller
     public function index()
     {
         $products = Product::all();
-
-        return view('shop', compact('products'));
+        $categories = Category::all();
+        return view('shop', compact(['products', 'categories']));
     }
 
+    public function searchProduct(Request $request)
+    {
+        $conditions = array();
+        if ($request->product_name) {
+            $name = $request->product_name;
+            array_push($conditions, ['name', 'like', "%$name%"]);
+        }
+
+        if ($request->category && $request->category != 0 ) {
+            $category = $request->category;
+            array_push($conditions, ['category_id', '=', "$category"]);
+        }
+        if ($request->expiry_date  ) {
+            $expiry_date = $request->expiry_date;
+            array_push($conditions, ['expiry_date', '=', "$expiry_date"]);
+        }
+
+
+
+
+        $products = Product::select('*')->where($conditions)->get();
+
+        $categories = Category::all();
+        return view('shop', compact(['products', 'categories']));
+    }
+
+      public function sortNamedesc()
+    {
+        $products = Product::orderBy('name', 'DESC')->get();;
+        $categories = Category::all();
+        return view('shop', compact(['products', 'categories']));
+    }
+      public function sortNameasc()
+    {
+        $products = Product::orderBy('name', 'ASC')->get();;
+        $categories = Category::all();
+        return view('shop', compact(['products', 'categories']));
+    }
     /**
      * Show the form for creating a new resource.
      *

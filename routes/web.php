@@ -7,6 +7,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +34,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('product', ProductController::class);
 Route::resource('like', LikeController::class);
 Route::resource('category', CategoryController::class);
+Route::resource('comment', CommentController::class);
  
 Route::resource('user', UserController::class, [
     'only' => ['index']
 ]);
 Route::resource('shop', ShopController::class);
+ 
+Route::post('searchproduct', [ShopController::class, 'searchProduct'])->name('searchproduct');
+Route::get('sortnamedesc', [ShopController::class, 'sortnamedesc'])->name('sortNamedesc');
+Route::get('sortnameasc', [ShopController::class, 'sortnameasc'])->name('sortNameasc');

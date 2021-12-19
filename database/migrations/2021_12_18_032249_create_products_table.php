@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('picture')->nullable();
-            $table->dateTime('expiry_date');
+            $table->date('expiry_date');
             $table->integer('phone')->nullable();
             $table->integer('quantity');
             $table->integer('views')->nullable();

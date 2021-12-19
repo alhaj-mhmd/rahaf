@@ -60,19 +60,7 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#users" aria-expanded="true"
-                    aria-controls="users">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Users</span>
-                </a>
-                <div id="users" class="collapse" aria-labelledby="users" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Users</h6>
-                        <a class="collapse-item" href="{{ route('user.index') }}">All Users</a>
-                    </div>
-                </div>
-            </li>
+         
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#products"
                     aria-expanded="true" aria-controls="products">
@@ -116,32 +104,8 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tiers" aria-expanded="true"
-                    aria-controls="tiers">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Tiers</span>
-                </a>
-                <div id="tiers" class="collapse" aria-labelledby="tiers" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Tiers</h6>
-                        <a class="collapse-item" href="">All Tiers</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#rewards"
-                    aria-expanded="true" aria-controls="rewards">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Rewards</span>
-                </a>
-                <div id="rewards" class="collapse" aria-labelledby="rewards" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Rewards</h6>
-                        <a class="collapse-item" href="">All Rewards</a>
-                    </div>
-                </div>
-            </li>
+        
+         
 
 
 
