@@ -93,9 +93,9 @@ use Carbon\Carbon; ?>
                             Sort by
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton2" style="">
-                       
-                            <a class="dropdown-item" href="{{route('sortNamedesc')}}">Name Z-A</a>
-                            <a class="dropdown-item" href="{{route('sortNameasc')}}">Name A-Z</a>
+
+                            <a class="dropdown-item" href="{{ route('sortNamedesc') }}">Name Z-A</a>
+                            <a class="dropdown-item" href="{{ route('sortNameasc') }}">Name A-Z</a>
 
                         </div>
                     </div>
@@ -105,51 +105,56 @@ use Carbon\Carbon; ?>
                 @foreach ($products as $product)
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                                alt="..." />
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">{{ $product->name }}</h5>
-                                    <h6>{{ $product->category->name }}</h6>
-                                    <span
-                                        class="text-danger">{{ Carbon::parse($product->expiry_date)->format('d M Y') }}</span><br>
-                                    <?php
-                                    $date = Carbon::parse($product->expiry_date);
-                                    $now = Carbon::now();
-                                    $diff = $date->diffInDays($now);
-                                    if ($diff > 30) {
-                                        $price = $product->price1;
-                                    } elseif ($diff <= 30 && $diff > 15) {
-                                        $price = $product->price2;
-                                    } elseif ($diff < 15) {
-                                        $price = $product->price3;
-                                    }
-                                    ?>
-                                    SP {{ $price }}
-                                </div>
-                                <div class="text-center">
-                                    <i class="bi bi-eye"></i> {{ $product->views }}
-                                </div>
-                                <div class="text-center">
-                                    <i class="bi bi-star"></i> {{ $product->likes->count() }}
-                                </div>
-                                <div class="text-center">
-                                    Comments ({{ $product->comments->count() }})
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto"
-                                        href="{{ route('shop.show', $product->id) }}">View options</a>
-                                </div>
-                            </div>
-                        </div>
+                            <img class="card-img-top" 
+                            @if ($product->picture)
+                            src="{{ URL::to('/') }}/products_images/{{ $product->user_id }}/{{ $product->picture }}"
+                        @else
+                            src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                @endif
+                alt="..." />
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <h5 class="fw-bolder">{{ $product->name }}</h5>
+                        <h6>{{ $product->category->name }}</h6>
+                        <span
+                            class="text-danger">{{ Carbon::parse($product->expiry_date)->format('d M Y') }}</span><br>
+                        <?php
+                        $date = Carbon::parse($product->expiry_date);
+                        $now = Carbon::now();
+                        $diff = $date->diffInDays($now);
+                        if ($diff > 30) {
+                            $price = $product->price1;
+                        } elseif ($diff <= 30 && $diff > 15) {
+                            $price = $product->price2;
+                        } elseif ($diff < 15) {
+                            $price = $product->price3;
+                        }
+                        ?>
+                        SP {{ $price }}
                     </div>
-                @endforeach
-
-
+                    <div class="text-center">
+                        <i class="bi bi-eye"></i> {{ $product->views }}
+                    </div>
+                    <div class="text-center">
+                        <i class="bi bi-star"></i> {{ $product->likes->count() }}
+                    </div>
+                    <div class="text-center">
+                        Comments ({{ $product->comments->count() }})
+                    </div>
+                </div>
+                <!-- Product actions-->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center">
+                        <a class="btn btn-outline-dark mt-auto" href="{{ route('shop.show', $product->id) }}">View
+                            options</a>
+                    </div>
+                </div>
             </div>
+        </div>
+        @endforeach
+
+
+        </div>
         </div>
     </section>
     <!-- Footer-->

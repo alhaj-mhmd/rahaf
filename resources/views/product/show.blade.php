@@ -7,7 +7,7 @@
          <div class="container">
              <div class="row">
                  <div class="col-md-3"><img class="card-img-top mb-5 mb-md-0"
-                         src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+                         src="{{ URL::to("/") }}/products_images/{{$product->user_id}}/{{$product->picture}}" alt="..." /></div>
                  <div class="col-md-9">
                      <div class="card">
                          <div class="card-body">

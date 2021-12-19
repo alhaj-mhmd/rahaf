@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\User;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
@@ -18,7 +19,7 @@ class CategoryController extends Controller
     public function index()
     {
         $id = Auth::id(); 
-        $categories = User::find($id)->categories;
+        $categories = Category::where('user_id','=',"$id")->get();
         return view('category.index', compact('categories'));
     }
 
@@ -38,9 +39,17 @@ class CategoryController extends Controller
      * @param  \App\Http\Requests\StoreCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCategoryRequest $request)
+    public function store(Request $request)
     {
-        //
+        $id = Auth::id(); 
+        $category = Category::create([
+            'name' =>  $request->name,
+            'user_id' =>  $id,
+        ]);
+
+        session()->flash('create');
+        $categories = Category::where('user_id','=',"$id")->get();
+        return redirect()->route('category.index', compact('categories') );
     }
 
     /**

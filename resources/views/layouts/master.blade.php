@@ -75,20 +75,7 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#likes"
-                    aria-expanded="true" aria-controls="likes">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Likes</span>
-                </a>
-                <div id="likes" class="collapse" aria-labelledby="likes" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Likes</h6>
-                        <a class="collapse-item" href="{{ route('like.index') }}">All likes</a>
-                        
-                    </div>
-                </div>
-            </li>
+       
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categories"
                     aria-expanded="true" aria-controls="categories">
