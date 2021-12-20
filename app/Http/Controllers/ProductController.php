@@ -57,6 +57,7 @@ class ProductController extends Controller
 
             $imageName = $request->picture->getClientOriginalName();
             $request->picture->move(public_path('products_images/'. $id), $imageName);
+             //$request->picture->move('./products_images/'.$id, $imageName); for poduction save
         } else {
             $imageName = '';
         }
