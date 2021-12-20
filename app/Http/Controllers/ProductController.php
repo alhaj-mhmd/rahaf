@@ -19,9 +19,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-
-
-
         $id = Auth::id();
         $products = User::find($id)->products;
         return view('product.index', compact('products'));
@@ -64,7 +61,7 @@ class ProductController extends Controller
             $imageName = '';
         }
 
-        $category = Product::create([
+        $product = Product::create([
             'name' =>  $request->name,
             'expiry_date' =>  $request->expiry_date,
             'phone' =>  $request->phone,
@@ -105,9 +102,10 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-
+        $id = Auth::id();
+        $categories = Category::where('user_id', '=', "$id")->get();
         $product = Product::find($product->id);
-        return view('product.edit', compact('product'));
+        return view('product.edit', compact(['product','categories']));
     }
 
     /**
@@ -117,9 +115,22 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductRequest $request, Product $product)
+    public function update(Request $request)
     {
-        //
+        $invoices = Product::findOrFail($request->product_id);
+        $invoices->update([
+            'name' =>  $request->name,
+             'phone' =>  $request->phone,
+            'quantity' =>  $request->quantity,
+            'description' =>  $request->description,
+             'price1' =>  $request->price1,
+            'price2' =>  $request->price2,
+            'price3' =>  $request->price3,
+            'category_id' =>  $request->category_id,
+         ]);
+
+        session()->flash('edit');
+        return back();
     }
 
     /**
